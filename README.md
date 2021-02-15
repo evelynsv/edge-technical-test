@@ -31,14 +31,14 @@ The number of the thread pool can be increased by passing an argument for the VM
 We can increase the number according to the necessity of the code.
 
 In order to avoid the NumberFormatException in the FastestComparator.compare method when trying to parse the String value coming to the CustomNumberEntity, 
-I could use a library, named commons-lang3 to check if the value is parsable like below:
+I could use a library to check if the value is parsable like below:
 
                 return list.parallelStream()
                 .filter(entity -> NumberUtils.isParsable(entity.getNumber()))
                 .map(entity -> fastestComparator.compare(valueToFind, entity))
                 .anyMatch(value -> value == 0);
                 
- Although, I decided to not use a library and just use a try/catch to capture the exceptional cases that are not parsable like, null, negative, or not digit values.
+ However, I avoided using a Library or implementing some method to make the validations because this is not the main of the test, so I decided to just use a try/catch to capture the exceptional cases that are not parsable like, null, negative, or not digit values.
 
 
 
