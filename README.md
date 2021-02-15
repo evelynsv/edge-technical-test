@@ -39,6 +39,11 @@ I could use a library to check if the value is parsable like below:
                 .anyMatch(value -> value == 0);
                 
  However, I avoided using a Library or implementing some method to make the validations because this is not the main of the test, so I decided to just use a try/catch to capture the exceptional cases that are not parsable like, null, negative, or not digit values.
+ 
+ ### How to execute
+ 
+- Clone the project
+- Write the following command in the directory where the project is cloned: ./gradlew build -i
 
 
 
